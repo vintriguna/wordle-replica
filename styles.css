@@ -1,0 +1,116 @@
+* {
+
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --attempt-width: 400px;
+    --attempt-height: 66px;
+
+    --keyboard-width: 650px;
+    --keyboard-height: 300px;
+}
+
+
+.grid-container {
+
+    border: 5px blue solid;
+    background-color: darkolivegreen;
+    width: 400px;
+    height: auto;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 400px;
+    grid-template-rows: auto;
+    row-gap: 16px;
+    justify-content: center;
+    align-content: center;
+}
+
+
+.attempt {
+    width: var(--attempt-width);
+    height: var(--attempt-height);
+    background-color: grey;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.letter {
+
+    width: calc(var(--attempt-width) / 6);
+    height: var(--attempt-height);
+    background-color: antiquewhite;
+    border: 2px black solid;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.7em;
+}
+
+.keyboard-container {
+
+    width: var(--keyboard-width);
+    height: var(--keyboard-height);
+    background-color: powderblue;
+    border: 5px yellowgreen solid;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: space-evenly;
+    justify-content: space-evenly;
+
+    gap: 5px
+}
+
+.key {
+
+    width: calc(var(--keyboard-width) / 11);
+    height: calc(var(--keyboard-height) / 4);
+    background-color: teal;
+    border: 5px solid transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.8em;
+}
+
+.correct-place {
+
+    background-color: springgreen;
+}
+
+.wrong-place {
+
+    background-color: yellow;
+}
+
+.incorrect {
+
+    background-color: grey;
+}
+
+.key-yellow {
+
+    background-color: yellow;
+}
+
+.key-gray {
+
+    background-color: gray;
+}
+
+.key-green {
+
+    background-color: springgreen;
+}
