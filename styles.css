@@ -3,6 +3,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-size: 18px;
+    font-weight: 1000;
 }
 
 :root {
@@ -10,15 +12,26 @@
     --attempt-width: 400px;
     --attempt-height: 66px;
 
-    --keyboard-width: 650px;
+    --keyboard-width: 700px;
     --keyboard-height: 300px;
+
+    --letter-clr: #ccd5ae;
+    --misplace-clr: #F9E79F;
+    --correct-clr: #ABEBC6;
+    --incorrect-clr: #808B96;
+    --white-letter-clr: #F8F9F9;
+}
+
+body {
+
+    background: radial-gradient(circle at 10% 20%, rgba(216, 241, 230, 0.46) 0.1%, rgba(233, 226, 226, 0.28) 90.1%);
 }
 
 
 .grid-container {
 
-    border: 5px blue solid;
-    background-color: darkolivegreen;
+    border: 5px transparent solid;
+    background-color: transparent;
     width: 400px;
     height: auto;
     margin: auto;
@@ -34,7 +47,7 @@
 .attempt {
     width: var(--attempt-width);
     height: var(--attempt-height);
-    background-color: grey;
+    background-color: transparent;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -46,8 +59,9 @@
 
     width: calc(var(--attempt-width) / 6);
     height: var(--attempt-height);
-    background-color: antiquewhite;
-    border: 2px black solid;
+    background-color: var(--letter-clr);
+    border: 2px gray solid;
+    border-radius: 4%;
 
     display: flex;
     justify-content: center;
@@ -60,8 +74,7 @@
 
     width: var(--keyboard-width);
     height: var(--keyboard-height);
-    background-color: powderblue;
-    border: 5px yellowgreen solid;
+    background-color: transparent;
     margin: 20px auto;
     display: flex;
     flex-wrap: wrap;
@@ -69,15 +82,16 @@
     align-content: space-evenly;
     justify-content: space-evenly;
 
-    gap: 5px
+    gap: 7px
 }
 
 .key {
 
-    width: calc(var(--keyboard-width) / 11);
+    width: calc(var(--keyboard-width) / 12);
     height: calc(var(--keyboard-height) / 4);
-    background-color: teal;
-    border: 5px solid transparent;
+    background-color: gainsboro;
+    border: 2.5px solid gray;
+    border-radius: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,30 +101,44 @@
 
 .correct-place {
 
-    background-color: springgreen;
+    background-color: var(--correct-clr);
+    border: transparent;
 }
 
 .wrong-place {
 
-    background-color: yellow;
+    background-color: var(--misplace-clr);
+    border: transparent;
 }
 
 .incorrect {
 
-    background-color: grey;
+    background-color: var(--incorrect-clr);
+    border: transparent;
 }
 
 .key-yellow {
 
-    background-color: yellow;
+    background-color: var(--misplace-clr);
 }
 
 .key-gray {
 
-    background-color: gray;
+    background-color: var(--incorrect-clr);
 }
 
 .key-green {
 
-    background-color: springgreen;
+    background-color: var(--correct-clr);
+}
+
+.key-enter, .key-backspace {
+
+    width: calc(var(--keyboard-width) / 7)
+}
+
+.correct-place, .wrong-place, .incorrect,
+.key-yellow, .key-gray, .key-green {
+
+    color: var(--white-letter-clr);
 }
